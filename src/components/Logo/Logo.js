@@ -13,7 +13,9 @@ const Logo = () => {
 
       <div className = 'wrapper'>
         <div className='chevron'>
-          <ExpandMoreIcon color = "black" sx={{ fontSize: 110 }} onClick = {() => console.log("jabadabauu")}/>
+          <a href = "#about-us" data-target="#about-us">
+            <ExpandMoreIcon color = "black" sx={{ fontSize: 110 }}/>
+          </a>
         </div>
       </div>
      
