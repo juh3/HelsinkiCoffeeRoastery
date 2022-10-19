@@ -4,6 +4,7 @@ import Location from './components/Location/Location'
 import { Route, Routes } from 'react-router-dom'
 import BgImage from './components/BgImage/BgImage'
 import Footer from './components/Footer/Footer'
+
 function App() {
   return (
     <div>
