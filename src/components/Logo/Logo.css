@@ -1,17 +1,17 @@
 *{
   margin:0;
   padding: 0;
-  overflow-y: visible;
 }
 
 .logo__container{
   display: flex;
   flex-direction: column;
   
+  height: 100vh;
 }
 
 .wrapper{
-  padding-top: 5rem;
+  padding-top: 2rem;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -24,25 +24,28 @@ h1{
   font-weight: 600;
   font-style: italic;
   font-size: 40px;
-  padding-bottom: 1rem;
 }
 
 a{
   color: black;
 }
 
+#logo__image{
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: auto;
+}
+
 p{
   font-family: 'Merriweather Sans', sans-serif;
   font-weight: 300;
-  font-size: 24px;
-  padding-bottom: 1rem;
-
+  font-size: 20px;
 }
 
 .chevron{
   animation: bounce 4s ease-in-out infinite;
   cursor: pointer;
-  margin-top: 0;
 }
 
 @keyframes bounce {
