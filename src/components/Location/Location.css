@@ -4,18 +4,17 @@
 }
 .openingHours__container{
   display: flex;
-  flex: 1;
-  height: 100vh;
-  width: 100vw;
   margin-top: 3rem;
+  flex-direction: column;
+
 }
 
 .openingHours__wrapper{
   display: flex;
-  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 ul{

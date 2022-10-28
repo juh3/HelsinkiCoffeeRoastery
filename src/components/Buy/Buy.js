@@ -5,6 +5,12 @@ import ContactPage from '../ContactPage/ContactPage'
 const Buy = () => {
   const [visible, setVisible] = useState(false)
 
+  const switchState = (visibility) => {
+    setVisible(visibility)
+  }
+
+  
+  
   return (
     <div className="buy__container">
       <div className="buy__wrapper">
@@ -21,7 +27,7 @@ const Buy = () => {
           </Button>
         )}
 
-        {visible && <ContactPage />}
+        {visible && <ContactPage switchState = {switchState} />}
       </div>
     </div>
   )

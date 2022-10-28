@@ -1,23 +1,44 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import {useState} from 'react'
 import './ContactPage.css'
 
-const ContactPage = () => {
+const ContactPage = ({switchState}) => {
+
+  const [email, setEmail] = useState("")
+  const [text, setText] = useState("")
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log("submitted")
+    console.log("")
+    console.log(email)
+    console.log(text)
+
+  }
+  
+
   return (
     <div className="contactpage__container">
       <div className="contactpage__wrapper">
-        <form>
+        <form onSubmit = {handleSubmit}>
           <p> Your email</p>
-          <input />
+          <input type = "email" value = {email} name = "Email" onChange={({target})=> setEmail(target.value)}/>
 
           <p> Tell us how we can help you!</p>
-          <textarea></textarea>
+          <textarea style = {{resize: 'none'}} onChange={({target})=> setText(target.value)} ></textarea>
 
-          <Button id="send__button" variant="contained">
+          <Button type = "submit" id="send__button" variant="contained">
             {' '}
             Send
           </Button>
+
+          <Button id = "close__button" variant = "contained" onClick={() => switchState(false)}>
+            {' '}
+            Close
+          </Button>
+
         </form>
+          
       </div>
     </div>
   )

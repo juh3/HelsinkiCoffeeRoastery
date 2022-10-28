@@ -37,4 +37,10 @@ p{
 
 #send__button{
   margin-top: 1rem;
+  background-color: rgb(222, 203, 183);
+}
+
+#close__button{
+  margin-top: 1rem;
+  background-color: black;
 }
