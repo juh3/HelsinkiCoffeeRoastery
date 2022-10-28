@@ -12,7 +12,6 @@ const Info = () => {
     >
       <div className="info__container" id="about-us">
         <div className="info__image_wrapper">
-          {/* <h1>About us</h1> */}
           <img
             id="inside_image"
             src="roastery_inside.jpg"

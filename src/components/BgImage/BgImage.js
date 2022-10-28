@@ -5,9 +5,7 @@ const BG_image = () => {
   return (
     <div className="bg__image_container">
       <Parallax bgImage="bg_image.webp" strength={500}>
-        <div style={{ height: 550 }}>
-          <div>Jou</div>
-        </div>
+        <div style={{ height: 550 }}>{/* <div>Jou</div> */}</div>
       </Parallax>
     </div>
   )

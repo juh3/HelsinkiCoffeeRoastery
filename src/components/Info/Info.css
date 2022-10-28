@@ -23,8 +23,6 @@
   flex-direction: column;
   height: 50vh;
   padding-top: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   align-items: center;
   justify-content: center;
   
@@ -33,7 +31,6 @@
 
 #inside_image{
   border-radius: 2.5%;
-  margin-left: 0.5rem;
   height: auto;
   width: 90%;
 }

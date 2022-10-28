@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+.buy__container{
+  margin-top: 2rem;
+}
+
+p{
+  font-family: 'Merryweather sans', sans serif;
+  margin-top: 1rem;
+}
+
+#contact__button{
+  margin-top: 3rem;
+  background-color: #A26B35;
+  color: black;
+  padding: 1rem;
+}
+
+.buy__wrapper{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
