@@ -1,19 +1,20 @@
 import { Button } from '@mui/material'
 import {useState} from 'react'
 import './ContactPage.css'
+import textService from "../../services/textService.js"
 
 const ContactPage = ({switchState}) => {
 
   const [email, setEmail] = useState("")
   const [text, setText] = useState("")
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     console.log("submitted")
     console.log("")
     console.log(email)
     console.log(text)
-
+    await textService.sendtext(email,text)
   }
   
 

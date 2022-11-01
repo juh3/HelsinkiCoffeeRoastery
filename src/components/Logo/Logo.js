@@ -5,6 +5,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 const Logo = () => {
   return (
     <div className="logo__container">
+      
       <div className="wrapper">
         <img
           id="logo__image"

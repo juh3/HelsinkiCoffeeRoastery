@@ -32,3 +32,13 @@
   align-items: center;
   justify-content: right;
 }
+
+a{
+  font-family: 'Merriweather Sans', sans-serif;
+  text-decoration: none;
+}
+
+a:hover{
+  color: gray;
+  transition: 'ease-in-out', 1.5s;
+}

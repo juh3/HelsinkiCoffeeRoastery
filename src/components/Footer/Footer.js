@@ -2,6 +2,7 @@ import React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import { IconButton } from '@mui/material'
+import { Link } from "react-router-dom"
 import './Footer.css'
 const Footer = () => {
   const linkToPage = (page) => {
@@ -26,7 +27,7 @@ const Footer = () => {
         <p>Made by Juha Anttila</p>
       </div>
       <div className="center">
-        <p> Joujou</p>
+        <Link path ="/login">Login</Link>
       </div>
 
       <div className="right">
