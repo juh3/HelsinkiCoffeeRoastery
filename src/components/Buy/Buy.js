@@ -2,6 +2,8 @@ import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import './Buy.css'
 import ContactPage from '../ContactPage/ContactPage'
+import { motion } from 'framer-motion'
+
 const Buy = () => {
   const [visible, setVisible] = useState(false)
 
@@ -9,8 +11,6 @@ const Buy = () => {
     setVisible(visibility)
   }
 
-  
-  
   return (
     <div className="buy__container">
       <div className="buy__wrapper">
@@ -27,7 +27,15 @@ const Buy = () => {
           </Button>
         )}
 
-        {visible && <ContactPage switchState = {switchState} />}
+        {visible && (
+          <motion.div
+            style={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 2, ease: 'easeIn' }}
+          >
+            <ContactPage switchState={switchState} />
+          </motion.div>
+        )}
       </div>
     </div>
   )

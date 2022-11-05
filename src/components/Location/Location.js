@@ -1,6 +1,7 @@
 import React from 'react'
 import './Location.css'
 import Map from '../Map/Map'
+
 const Location = () => {
   const openingHours = [
     { day: 'Monday', hours: '8-12' },

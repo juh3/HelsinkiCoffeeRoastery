@@ -6,13 +6,14 @@ import BgImage from './components/BgImage/BgImage'
 import Footer from './components/Footer/Footer'
 import { useEffect, useRef, useState } from 'react'
 import Buy from './components/Buy/Buy'
-import LoginForm from "./components/LoginForm/LoginForm"
+import LoginForm from './components/LoginForm/LoginForm'
+import AdminPage from './components/Admin/AdminPage.js'
 
 function App() {
   const ref = useRef(null)
   const [map, setMap] = useState()
   const [user, setUser] = useState()
-
+  console.log(user)
   useEffect(() => {
     if (ref.current && !map) {
       setMap(new window.google.maps.Map(ref.current, {}))
@@ -24,7 +25,7 @@ function App() {
   }
 
   const Main = () => {
-    return(
+    return (
       <div>
         <Logo />
         <Info />
@@ -39,10 +40,13 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Main />} />
         <Route path="#about-us" element={<Info />} />
-        <Route path = "/login" element = {<LoginForm handleUser = {handleUser} />}/>
+        <Route
+          path="/login"
+          element={<LoginForm handleUser={handleUser} />}
+        />
+        <Route path="/admin" element={<AdminPage />} replace />
       </Routes>
 
-      
       <Footer />
     </div>
   )
