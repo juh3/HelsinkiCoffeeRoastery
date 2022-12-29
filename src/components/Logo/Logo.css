@@ -6,11 +6,20 @@
 .logo__container{
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   height: 100%;
 }
 
 .wrapper{
   padding-top: 5rem;
+=======
+  
+  height: 100vh;
+}
+
+.wrapper{
+  padding-top: 2rem;
+>>>>>>> 4c01402a762a1758190a8c086ec31f639b9bc1b7
   display: flex;
   width: 100%;
   justify-content: center;
@@ -25,10 +34,28 @@ h1{
   font-size: 40px;
 }
 
+<<<<<<< HEAD
 p{
   font-family: 'Merriweather Sans', sans-serif;
   font-weight: 300;
   font-size: 24px;
+=======
+a{
+  color: black;
+}
+
+#logo__image{
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: auto;
+}
+
+p{
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+>>>>>>> 4c01402a762a1758190a8c086ec31f639b9bc1b7
 }
 
 .chevron{
