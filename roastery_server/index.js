@@ -9,6 +9,7 @@ app.use(express.json())
 app.use(cors())
 const loginRouter = require('./controllers/login')
 const registerRouter = require('./controllers/users')
+const textRouter = require('./controllers/text')
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(result => {
@@ -35,20 +36,9 @@ app.get("/", (req, res) => {
   res.json(texts)
 })
 
-app.post("/api/texts", (req, res) => {
-  console.log("im here")
-  const body = req.body
-  const textObject = {
-    email: body.email,
-    text: body.text
-  }
-  texts = texts.concat(textObject)
-  res.json(textObject)
-})
-
 app.use("/api/login", loginRouter)
 app.use("/api/register", registerRouter)
-
+app.use("/api/texts", textRouter)
 app.use(unknownEndpoint)
 
 

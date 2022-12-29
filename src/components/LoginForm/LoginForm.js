@@ -1,27 +1,36 @@
 import './LoginForm.css'
 import { Button } from '@mui/material'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import userService from '../../services/userService'
 import { useNavigate } from 'react-router-dom'
 const LoginForm = ({ handleUser }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
+
+
   const handleLogin = async (event) => {
     event.preventDefault()
     console.log('logging in with', email, password)
     try {
       const user = await userService.login({ email, password })
-      window.localStorage.setItem(
-        'loggedRoasteryappUser',
-        JSON.stringify(user)
-      )
+      window.localStorage.setItem({
+        loggedRoasteryappUser:
+        JSON.stringify(user),
+        expiry: 10000
+    })
       handleUser(user)
       setEmail('')
       setPassword('')
       navigate('/admin')
     } catch (exception) {}
-  }
+  } 
+
+  useEffect(() => { 
+    if(window.localStorage.getItem('loggedRoasteryappUser')){
+      navigate("/admin")
+    }
+  },[navigate])
 
   return (
     <div className="login__container">

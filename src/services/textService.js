@@ -7,8 +7,22 @@ const sendtext = async (email, text) => {
     email: email,
     text: text
   }
-  await axios.post(baseUrl, textObject)
+  const response = await axios.post(baseUrl, textObject)
+  return response
+}
+
+const gettexts = async () => {
+  console.log("ready to fetch data")
+  
+  const request =  await axios.get(baseUrl)
+  return request.data
+}
+
+const findById = async(id) => {
+
+  const request = await axios.get(baseUrl+`/${id}`)
+  return request.data
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { sendtext }
+export default { sendtext, gettexts, findById}

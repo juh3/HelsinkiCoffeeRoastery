@@ -15,7 +15,7 @@ const Buy = () => {
     <div className="buy__container">
       <div className="buy__wrapper">
         <p> Did you know we also sell coffee to cafes ?</p>
-        <p> Contact us below to find the best match!</p>
+        <p> Contact us below to find the best option!</p>
         {!visible && (
           <Button
             id="contact__button"

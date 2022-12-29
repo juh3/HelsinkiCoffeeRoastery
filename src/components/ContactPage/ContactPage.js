@@ -7,14 +7,23 @@ const ContactPage = ({switchState}) => {
 
   const [email, setEmail] = useState("")
   const [text, setText] = useState("")
-
+  let errors = ""
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log("submitted")
     console.log("")
     console.log(email)
     console.log(text)
-    await textService.sendtext(email,text)
+    const response = await textService.sendtext(email,text)
+    console.log("handlesubmit")
+    console.log("--- the response")
+    console.log(response)
+    if(response.status === 201){
+      switchState(false)
+    }
+    else{
+      errors = response.data.error
+    }
   }
   
 

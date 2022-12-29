@@ -25,15 +25,9 @@ const Info = () => {
             {' '}
             We are a small micro roastery located in central Helsinki
             at Virtual Street 12.{' '}
-          </p>
-          <br />
-          <p id="p_info_text">
             {' '}
             Founded in 2020 by a group of friends. We thrive for the
             best tasting cup of coffee.{' '}
-          </p>
-          <br />
-          <p id="p_info_text">
             {' '}
             You can find our products in well equipped markets as well
             as in our small store at our roastery.{' '}
@@ -43,12 +37,12 @@ const Info = () => {
 
       <div className="info__container">
         <div className="info__text">
+        <h1 id="h1_info_text"> We offer exceptional quality</h1>
+
           <p id="p_info_text">
             We specialize in light roast coffee and work with small
             farmers.
-          </p>
-          <br />
-          <p id="p_info_text">
+        
             Our passion is to offer exceptional quality coffees,
             purchased as directly as possible from farmers or through
             partners who offer transparency from their purchasing

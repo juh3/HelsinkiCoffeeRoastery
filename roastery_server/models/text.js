@@ -14,12 +14,12 @@ const textSchema = mongoose.Schema({
 
   answered:{
     type: Boolean,
-    default: False
+    default: false
   },
 
   completed:{
     type: Boolean,
-    default: False
+    default: false
   }
 
 })
@@ -35,4 +35,4 @@ textSchema.set('toJSON', {
 
 const Text = mongoose.model('Text', textSchema)
 
-module.exports = User
+module.exports = Text

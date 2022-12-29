@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from 'react'
 import Buy from './components/Buy/Buy'
 import LoginForm from './components/LoginForm/LoginForm'
 import AdminPage from './components/Admin/AdminPage.js'
+import TextView from './components/TextView/TextView'
 
 function App() {
   const ref = useRef(null)
@@ -45,6 +46,7 @@ function App() {
           element={<LoginForm handleUser={handleUser} />}
         />
         <Route path="/admin" element={<AdminPage />} replace />
+        <Route path = "/admin/:id" element = {<TextView />} replace />
       </Routes>
 
       <Footer />
