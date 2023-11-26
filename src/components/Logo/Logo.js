@@ -1,53 +1,59 @@
-import React from 'react'
-import './Logo.css'
-<<<<<<< HEAD
+import React from 'react';
+import './Logo.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import { Link as ScrollLink } from 'react-scroll';
+import { motion } from 'framer-motion';
 const Logo = () => {
-  return (
-    <div className='logo__container'>
-      <div className = 'wrapper'>
-        <img src = "logo.png" alt = "helsinki coffee roastery logo"/>
-=======
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+  const scrollToAbout = () => {
+    const aboutUsSection = document.getElementById('about-us');
+    if (aboutUsSection) {
+      aboutUsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-const Logo = () => {
   return (
-    <div className="logo__container">
-      
-      <div className="wrapper">
+    <div className="logo_container">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: 'easeIn', duration: 1 }}
+        className="wrapper"
+      >
         <img
           id="logo__image"
-          src="logo.png"
+          src="roastery.jpg"
           alt="helsinki coffee roastery logo"
         />
->>>>>>> 4c01402a762a1758190a8c086ec31f639b9bc1b7
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: '-50px' }}
+        animate={{ opacity: 1, y: '0px' }}
+        transition={{ ease: 'easeInOut', duration: 1 }}
+        className="heading"
+      >
         <h1> Helsinki Coffee Roasters</h1>
-        <p>Because everyone deserves a good cup of tsufe</p>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: '-50px' }}
+        animate={{ opacity: 1, y: '0px' }}
+        transition={{ ease: 'easeInOut', duration: 1, delay: 0.5 }}
+        style={{ padding: 0, margin: 0 }}
+      >
+        <p className="p_subtitle">
+          Because everyone deserves a good cup of tsufe
+        </p>
+      </motion.div>
+      <div className="chevron">
+        <ScrollLink href="#about-us" onClick={scrollToAbout}>
+          <ExpandMoreIcon
+            id="chevron_icon"
+            color="black"
+            sx={{ fontSize: 80 }}
+          />
+        </ScrollLink>
       </div>
-
-<<<<<<< HEAD
-      <div className = 'wrapper'>
-        <div className='chevron'>
-          <ExpandMoreIcon color = "black" sx={{ fontSize: 110 }} onClick = {() => console.log("jabadabauu")}/>
-        </div>
-      </div>
-     
-=======
-      <div className="  wrapper">
-        <div className="chevron">
-          <a href="#about-us" data-target="#about-us">
-            <ExpandMoreIcon color="black" sx={{ fontSize: 110 }} />
-          </a>
-        </div>
-      </div>
->>>>>>> 4c01402a762a1758190a8c086ec31f639b9bc1b7
     </div>
-  )
-}
+  );
+};
 
-<<<<<<< HEAD
-export default Logo
-=======
-export default Logo
->>>>>>> 4c01402a762a1758190a8c086ec31f639b9bc1b7
+export default Logo;

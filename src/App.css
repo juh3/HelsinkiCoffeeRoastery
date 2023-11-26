@@ -1,0 +1,11 @@
+@import './fonts/fonts.css';
+
+.transition-bg {
+  background-color: hsl(0, 0%, 13%);
+  overflow: hidden;
+  transition: background-color 0.3s ease; /* Adjust the duration and easing as needed */
+}
+
+.bg {
+  overflow: hidden;
+}

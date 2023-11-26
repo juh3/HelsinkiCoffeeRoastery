@@ -1,44 +1,54 @@
-import { Button } from '@mui/material'
-import React, { useState } from 'react'
-import './Buy.css'
-import ContactPage from '../ContactPage/ContactPage'
-import { motion } from 'framer-motion'
+import React from 'react';
+import './Buy.css';
 
-const Buy = () => {
-  const [visible, setVisible] = useState(false)
+const coffees = [
+  {
+    title: 'Esperanza',
+    weight: '250g',
+    price: '14€',
+    variety: 'Pink Bourbon',
+    country: 'Columbia',
+  },
+  {
+    title: 'San Silvestre',
+    weight: '250g',
+    price: '12€',
+    variety: 'San Silvestre',
+    country: 'Brazil',
+  },
+  {
+    title: 'Java A Good Time',
+    weight: '250g',
+    price: '10€',
+    variety: 'Robusta',
+    country: 'India',
+  },
+];
 
-  const switchState = (visibility) => {
-    setVisible(visibility)
-  }
-
+const Card = ({ coffee }) => {
   return (
-    <div className="buy__container">
-      <div className="buy__wrapper">
-        <p> Did you know we also sell coffee to cafes ?</p>
-        <p> Contact us below to find the best option!</p>
-        {!visible && (
-          <Button
-            id="contact__button"
-            variant="contained"
-            onClick={() => setVisible(true)}
-          >
-            {' '}
-            Contact us{' '}
-          </Button>
-        )}
-
-        {visible && (
-          <motion.div
-            style={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 2, ease: 'easeIn' }}
-          >
-            <ContactPage switchState={switchState} />
-          </motion.div>
-        )}
+    <div className="card">
+      <div className="card_content">
+        <h3> {coffee.title}</h3>
+        <p> {coffee.price}</p>
+        <p> {coffee.weight}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Buy
+const Buy = () => {
+  return (
+    <div className="Buy">
+      <div className="Buy_wrapper">
+        {coffees.map((coffee, index) => (
+          <div key={index}>
+            <Card coffee={coffee} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Buy;

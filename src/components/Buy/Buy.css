@@ -1,29 +1,46 @@
-*{
-  margin: 0;
+* {
   padding: 0;
-  
-}
-.buy__container{
-  margin-top: 2rem;
+  margin: 0;
 }
 
-p{
-  font-family: 'Merryweather sans', sans serif;
-  margin-top: 1rem;
-}
-
-#contact__button{
-  margin-top: 3rem;
-  background-color: rgb(222, 203, 183);
-  color: black;
-  padding: 1rem;
-}
-
-.buy__wrapper{
+.Buy {
+  width: 100vw;
+  min-height: 100vh;
   display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  
+}
+
+.Buy_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 3fr;
+  gap: 96px;
+}
+
+.card {
+  gap: 72px;
+  border-radius: 12px;
+  width: 40ch;
+  height: 50ch;
+  padding: 10rem 0 0;
+  background-image: url('../../../public/coffee_bag.webp');
+  background-size: cover;
+  transition: 0s scale;
+}
+
+.card:hover {
+  scale: 1.05;
+  transition-duration: 0.5s;
+  transition-delay: 0.1s;
+}
+
+.card_content {
+  padding: 4rem;
+  background-color: black;
+}
+
+h3,
+p {
+  color: white;
 }

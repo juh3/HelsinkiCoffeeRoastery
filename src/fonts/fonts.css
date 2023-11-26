@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Cloe'; /* Replace with your desired font name */
+  src: url('./cloe.ttf') format('ttf');
+  /* Add additional src URLs for other font formats if available */
+  font-weight: normal;
+  font-style: normal;
+}
