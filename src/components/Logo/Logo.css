@@ -21,17 +21,24 @@
 img {
   border-radius: 4px;
   /* box-shadow: 2px 2px 3px rgb(184, 181, 181), -2px 2px 3px rgb(184, 181, 181); */
+  width: 70%;
 }
 
 .heading {
   position: relative;
   left: 28px;
   top: -38px;
+  @media screen and (max-width: 100px) {
+    top: -24px;
+  }
 }
 h1 {
   font-family: 'Cloe', sans-serif;
   font-weight: 500;
   font-size: 72px;
+  @media screen and (max-width: 1600px) {
+    font-size: 48px;
+  }
 }
 
 a {

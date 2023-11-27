@@ -23,24 +23,61 @@
   border-radius: 12px;
   width: 40ch;
   height: 50ch;
-  padding: 10rem 0 0;
+  padding: 9.4rem 0 0;
   background-image: url('../../../public/coffee_bag.webp');
   background-size: cover;
   transition: 0s scale;
+  overflow: hidden;
+
 }
 
 .card:hover {
-  scale: 1.05;
+  scale: 1.02 ;
   transition-duration: 0.5s;
   transition-delay: 0.1s;
+  cursor: pointer;
 }
 
 .card_content {
   padding: 4rem;
-  background-color: black;
+  max-width: 100%;
+  background: linear-gradient(hsl(0 0% 0% / 0), hsl(10 0% 0% /0.2) 10%, hsl(0 0% 0%/1));
+  border-radius: 0 0 12px 12px;
+  z-index: 1000;
+  transform: translateY(25%);
 }
+
+.card:hover .card_content {
+  transform: translateY(0);
+  transition-duration: 0.5s;
+}
+
+
+.card_row{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 12px;
+  opacity: 0;
+}
+
+.card:hover .card_row{
+  opacity: 1;
+}
+.card_row:last-child{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 18px;
+}
+
 
 h3,
 p {
-  color: white;
+  color: rgb(236, 236, 236);
+  font-family: Roboto, 'sans serif';
+  font-weight: 500;
+  letter-spacing: 4%;
+}
+
+h3{
+  font-size: 28px;
 }

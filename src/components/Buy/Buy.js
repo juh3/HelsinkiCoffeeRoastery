@@ -1,5 +1,7 @@
 import React from 'react';
 import './Buy.css';
+import { BiWorld } from "react-icons/bi";
+import { CiCoffeeBean } from "react-icons/ci";
 
 const coffees = [
   {
@@ -17,7 +19,7 @@ const coffees = [
     country: 'Brazil',
   },
   {
-    title: 'Java A Good Time',
+    title: 'Robust Joe',
     weight: '250g',
     price: '10€',
     variety: 'Robusta',
@@ -29,9 +31,19 @@ const Card = ({ coffee }) => {
   return (
     <div className="card">
       <div className="card_content">
-        <h3> {coffee.title}</h3>
-        <p> {coffee.price}</p>
-        <p> {coffee.weight}</p>
+        <h3 className='card_heading'> {coffee.title}</h3>
+        <div className='card_row'>
+          <p className='card_country'> Origin: {''}
+            {coffee.country}</p>
+        </div>
+        <div className='card_row'>
+          <p className='card_variety'>
+            Variety: {''}{coffee.variety}   </p>
+        </div>
+        <div className='card_row'>
+          <p className='card_weight'> {coffee.weight}</p>
+          <p className='card_price'> {coffee.price}</p>
+        </div>
       </div>
     </div>
   );
