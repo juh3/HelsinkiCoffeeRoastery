@@ -13,6 +13,9 @@ const Logo = () => {
 
   return (
     <div className="logo_container">
+      <div className="company_logo_wrapper">
+        <img id="front_logo" src="logo.svg" alt="logo of the company" />
+      </div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

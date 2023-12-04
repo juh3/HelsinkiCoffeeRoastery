@@ -18,6 +18,17 @@
   align-items: center;
 }
 
+#front_logo {
+  width: 200px;
+  height: 80px;
+}
+
+.company_logo_wrapper {
+  position: absolute;
+  top: 24px;
+  left: 124px;
+}
+
 img {
   border-radius: 4px;
   /* box-shadow: 2px 2px 3px rgb(184, 181, 181), -2px 2px 3px rgb(184, 181, 181); */

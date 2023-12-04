@@ -1,6 +1,6 @@
-import React from 'react'
-import './Location.css'
-import Map from '../Map/Map'
+import React from 'react';
+import './Location.css';
+import Map from '../Map/Map';
 
 const Location = () => {
   const openingHours = [
@@ -9,11 +9,11 @@ const Location = () => {
     { day: 'Wednesday', hours: '8-16' },
     { day: 'Thursday', hours: '8-16' },
     { day: 'Friday', hours: '8-18' },
-  ]
+  ];
 
   const coords = {
     center: { lat: 60.19065208536513, lng: 24.949951171875 },
-  }
+  };
 
   return (
     <div className="openingHours__container">
@@ -26,10 +26,12 @@ const Location = () => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="openingHours__wrapper">
         <Map location={coords} zoomLevel={16} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Location
+export default Location;

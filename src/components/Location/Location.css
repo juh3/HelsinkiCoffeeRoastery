@@ -1,32 +1,37 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
-.openingHours__container{
+.openingHours__container {
   display: flex;
-  margin-top: 3rem;
-  flex-direction: column;
-
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.openingHours__wrapper{
+.openingHours__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-bottom: 4rem;
+  margin-left: 4rem;
+  color: white;
 }
 
-ul{
+.openingHours__wrapper:last-child {
+  margin-right: 4rem;
+}
+
+ul {
   list-style: none;
 }
 
-h2{
+h2 {
   font-family: 'Merriweather sans', sans serif;
   font-weight: 600;
 }
 
-li{
+li {
   padding-top: 1rem;
   font-family: 'Merriweather sans', sans-serif;
 }

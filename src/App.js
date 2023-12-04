@@ -4,12 +4,14 @@ import Location from './components/Location/Location';
 import { Route, Routes } from 'react-router-dom';
 import BgImage from './components/BgImage/BgImage';
 import Footer from './components/Footer/Footer';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import LoginForm from './components/LoginForm/LoginForm';
 import AdminPage from './components/Admin/AdminPage.js';
 import TextView from './components/TextView/TextView';
 import './App.css';
 import Buy from './components/Buy/Buy.js';
+import Loading from './components/Loading/Loading.js';
+import SplashScreen from './components/Splash/Splash';
 
 function App() {
   const ref = useRef(null);
@@ -28,6 +30,7 @@ function App() {
 
   const Main = () => {
     const [bg, setBg] = useState(false);
+    const [allowScroll, setAllowScroll] = useState(false);
 
     useEffect(() => {
       if (typeof window !== 'undefined') {
@@ -36,13 +39,25 @@ function App() {
         );
       }
     }, []);
+
     return (
-      <div className={bg ? 'transition-bg' : 'bg'}>
-        <Logo />
-        <Info bg={bg} />
-        <BgImage />
-        <Buy />
-        <Location />
+      <div
+        className={bg ? 'transition-bg' : 'bg'}
+        style={{ overflow: allowScroll ? 'auto' : 'hidden' }}
+      >
+        {!allowScroll && (
+          <SplashScreen onDisappear={() => setAllowScroll(true)} />
+        )}
+        {allowScroll && (
+          <Suspense fallback={<Loading />}>
+            <Logo />
+            <Info bg={bg} />
+            <BgImage />
+            <Buy />
+            <Location />
+            <Footer />
+          </Suspense>
+        )}
       </div>
     );
   };
@@ -55,8 +70,6 @@ function App() {
         <Route path="/admin" element={<AdminPage />} replace />
         <Route path="/admin/:id" element={<TextView />} replace />
       </Routes>
-
-      <Footer />
     </div>
   );
 }
